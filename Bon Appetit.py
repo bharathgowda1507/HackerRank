@@ -8,20 +8,18 @@ import sys
 
 # Complete the bonAppetit function below.
 def bonAppetit(bill, k, b):
-    sum = 0
-    
+    charged = 0
+
     for i in range(len(bill)):
         if i != k:
-            sum = sum + bill[i]
-        else:
-            pass
+            charged += bill[i]
+        
+    charged = charged / 2
 
-    sum = sum / 2
-    
-    if b > sum:
-        print(int(b - sum))
-    else:
+    if charged == b:
         print('Bon Appetit')
+    else:
+        print(int(b - charged))
 
 if __name__ == '__main__':
     nk = input().rstrip().split()
